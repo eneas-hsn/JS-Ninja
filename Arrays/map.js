@@ -13,7 +13,7 @@ var conversão=fahrenheit.map(celcius)
 console.log(conversão)*/
 
 var convidados= [
-    {nome:'eneas', idade:16},
+    {nome:'eneas', idade:17},
     {nome:'enesio', idade:18},
     {nome:'saene',idade:20}
 ]
