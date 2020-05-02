@@ -34,3 +34,12 @@ var calc= function (total,item) {
 }
 var dobrados= numeros.reduce(calc, [])
 console.log(dobrados)*/
+var numeros=[10,18,1,15]
+var calc= function (total,item) {
+    if(item>10){
+        total.push(item)
+    }
+    return total
+}
+var maior10= numeros.reduce(calc,[])
+console.log(maior10)
