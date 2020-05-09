@@ -13,7 +13,7 @@
     <script type="text/javascript">
         function recuperarDados() {
             var xhr=new XMLHttpRequest()
-            xhr.open("GET","https://github.com/eneas-hsn")
+            xhr.open("GET","https://api.github.com/users/eneas-hsn")
             xhr.send(null)
             xhr.onreadystatechange=function(){
                 if (xhr.readyState===4) {
