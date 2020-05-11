@@ -11,13 +11,36 @@
         <button onclick="recuperarDados()">Recuperar dados do GH</button>
     </div>
     <script type="text/javascript">
+    var elApp=document.getElementById('app')
         function recuperarDados() {
             var xhr=new XMLHttpRequest()
             xhr.open("GET","https://api.github.com/users/eneas-hsn")
             xhr.send(null)
             xhr.onreadystatechange=function(){
                 if (xhr.readyState===4) {
-                    console.log(JSON.parse(xhr.responseText))
+                    var res=JSON.parse(xhr.responseText)
+                    var nome=res.name
+                    var avatar_url=res.avatar_url
+                    var folowers=res.folowers
+                    var blog_url=res.blog_url
+
+                    var elAvatar=document.createElement('img')
+                    elAvatar.setAttribute('width','128')
+                    elAvatar.setAttribute('src',avatar_url)
+                    elApp.appendChild(elAvatar)
+                    
+                    var elNome=document.createElement('p')
+                    elNome.innerHTML=nome
+                    var elFollowers=document.createElement('p')
+                    elFollowers.innerText=folowers
+                    var elBlog=document.createElement('a')
+                    elBlog.setAttribute('href','http://'+blog_url)
+                    elBlog.innerText=blog_url
+                    elApp.appendChild(elAvatar)
+                    elApp.appendChild(elNome)
+                    elApp.appendChild(elFollowers)
+                    elApp.appendChild(elBlog)
+
                 }
             }
         }
