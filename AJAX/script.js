@@ -6,9 +6,11 @@ if (window.XMLHttpRequest) {
     xmlHttp=new ActiveXObject('Microsoft.XMLHTTP')
 }
 xmlHttp.onreadystatechange=function () {
-    if (xmlHttp.readyState==4&& xmlHttp.status==200) {
+    if (xmlHttp.readyState==4 && xmlHttp.status==200) {
         alert(xmlHttp.responseText)
+        console.log(this.readyState,this.status)
     }    
+    
 }
 xmlHttp.open('GET','arquivo.txt',true);
 xmlHttp.send();
